@@ -58,16 +58,13 @@ class Board():
                         self.valuesInCols[index].add(int(item))
                         self.valuesInBoxes[self.spaceToBox(reader.line_num-1, index)].add(int(item))
                         self.unsolved.remove((reader.line_num-1, index))
-    ##########################################
-    ####   Utility Functions
-    ##########################################
+  
 
     #converts a given row and column to its inner box number
     def spaceToBox(self, row, col):
         return self.n * (row // self.n) + col // self.n
-#board = Board('a2/tests/example.csv').board
-#print(board);
-#prints out a command line representation of the board
+
+    #prints out a command line representation of the board
     def print(self):
         for r in range(self.n2):
             #add row divider
@@ -99,12 +96,7 @@ class Board():
                     else: self.row += str(val)
             print(self.row)
             
-        
-
-
-    ##########################################
-    ####   Move Functions - YOUR IMPLEMENTATIONS GO HERE
-    ##########################################
+       
 
     # returns True if the space is empty and on the board,
     # and assigning val to it is not blocked by any constraints
@@ -170,12 +162,6 @@ class Board():
         return True
 
 
-        
-
-    # # optional helper function for use by getMostConstrainedUnsolvedSpace
-    #def evaluateSpace(self, space):
-
-
     ## gets the unsolved space with the most current constraints
     ## returns None if unsolved is empty
 
@@ -219,13 +205,8 @@ class Board():
                 
 
 class Solver:
-    ##########################################
-    ####   Constructor
-    ##########################################c
     def __init__(self):
         pass
-    ##########################################
-    ####   Solve  ##########################################
 
     # recursively selects the most constrained unsolved space and attempts
     # to assign a value to it
