@@ -219,21 +219,9 @@ class Board():
                 
 
 class Solver:
-    ##########################################
-    ####   Constructor
-    ##########################################c
     def __init__(self):
         pass
-    ##########################################
-    ####   Solve  ##########################################
 
-    # recursively selects the most constrained unsolved space and attempts
-    # to assign a value to it
-
-    # upon completion, it will leave the board in the solved state (or original
-    # state if a solution does not exist)
-
-    # returns True if a solution exists and False if one does not
     def solve(self, board):
         size = board.n2 ** 2
         original = board
@@ -242,6 +230,7 @@ class Solver:
             board.print()
             return True
         else:
+            board.print()
             constraint = board.getMostConstrainedUnsolvedSpace();
             space = constraint
             for val in range(1, board.n2 + 1):
